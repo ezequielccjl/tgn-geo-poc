@@ -4,7 +4,13 @@ import Main from '../screens/main';
 import Cache from '../screens/cache';
 import NoCache from '../screens/nocache';
 
-const Stack = createStackNavigator();
+type STACK = {
+  Main: undefined;
+  Cache: undefined;
+  NoCache: undefined;
+};
+
+const Stack = createStackNavigator<STACK>();
 
 const POCStack: FC = () => (
   <Stack.Navigator>
@@ -23,7 +29,7 @@ const POCStack: FC = () => (
       }}
     />
     <Stack.Screen
-      name="No Cache"
+      name="NoCache"
       component={NoCache}
       options={{
         title: 'No Cache',
